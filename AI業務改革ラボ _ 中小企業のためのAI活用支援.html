@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI業務改革ラボ | 中小企業のためのAI活用支援</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+        
+        :root {
+            --primary-color: #2E7D32;
+            --secondary-color: #4CAF50;
+            --accent-color: #8BC34A;
+            --text-color: #333333;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #757575;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ヘッダー */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+        
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            background-color: var(--light-gray);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .secondary-button {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .secondary-button:hover {
+            background-color: var(--light-gray);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 特徴セクション */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .feature-card p {
+            color: var(--dark-gray);
+        }
+        
+        /* サービスセクション */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .services-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .service-image {
+            flex: 1;
+            min-height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            flex: 2;
+            padding: 40px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            margin: 20px 0;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            list-style: none;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        /* 導入事例セクション */
+        .case-studies {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .case-study-card {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+        
+        .case-study-header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px;
+        }
+        
+        .case-study-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .case-study-content {
+            padding: 30px;
+        }
+        
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .case-study-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .result-highlight {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        /* 導入プロセスセクション */
+        .process {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 60px 0;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            right: 60px;
+            height: 3px;
+            background-color: var(--medium-gray);
+            z-index: 1;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .step-description {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        
+        /* 料金プランセクション */
+        .pricing {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .pricing-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .pricing-price {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            padding: 30px 0;
+            background-color: var(--white);
+        }
+        
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        
+        .pricing-features {
+            padding: 30px;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            list-style: none;
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .pricing-button {
+            text-align: center;
+            padding: 0 30px 30px;
+        }
+        
+        /* お客様の声セクション */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--medium-gray);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: var(--medium-gray);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .author-info p {
+            margin: 5px 0 0;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* よくある質問セクション */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .accordion {
+            margin-top: 50px;
+        }
+        
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .accordion-header {
+            background-color: var(--light-gray);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background-color: var(--medium-gray);
+        }
+        
+        .accordion-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+        
+        .accordion-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-content {
+            background-color: var(--white);
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            padding: 20px;
+            max-height: 1000px;
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+        
+        /* CTA セクション */
+        .cta-section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .white-button {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .white-button:hover {
+            background-color: var(--light-gray);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .outline-button {
+            background-color: transparent;
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .outline-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* フッター */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            color: var(--medium-gray);
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+            color: var(--medium-gray);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--dark-gray);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--dark-gray);
+            text-align: center;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* レスポンシブデザイン */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                flex-direction: column;
+            }
+            
+            .service-image {
+                min-height: 200px;
+            }
+            
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-text">AI業務改革ラボ</div>
+            </div>
+            
+            <button class="mobile-menu-btn">☰</button>
+            
+            <ul class="nav-menu">
+                <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#features">特徴</a></li>
+                <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#services">サービス</a></li>
+                <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#case-studies">導入事例</a></li>
+                <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#process">導入プロセス</a></li>
+                <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#pricing">料金</a></li>
+                <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#faq">よくある質問</a></li>
+                <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#contact" class="cta-button">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>明日から使える、<br>わかりやすいAI活用で<br>業務を変革する</h1>
+                <p>中小企業の業務課題を生成AIで解決し、<br>人手不足や業務効率化の悩みを解消します。</p>
+                <div class="hero-buttons">
+                    <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#contact" class="cta-button">無料相談を予約する</a>
+                    <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#services" class="secondary-button">サービスを見る</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="./AI業務改革ラボ _ 中小企業のためのAI活用支援_files/500x350.png" alt="AI業務改革イメージ">
+            </div>
+        </div>
+    </section>
+    
+    <!-- 特徴セクション -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI業務改革ラボの特徴</h2>
+                <p>中小企業の実情に合わせた、わかりやすく実践的なAI活用支援を提供します</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>わかりやすい説明</h3>
+                    <p>難解な専門用語を避け、経営者・担当者にもわかりやすく説明します。明日から使える具体的な提案を心がけています。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>低コストで始められる</h3>
+                    <p>初期費用5万円から始められる診断サービスや、3,000円から参加できるセミナーなど、気軽に始められるプランをご用意しています。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>スピーディな効果実現</h3>
+                    <p>最短1週間でAI活用を開始し、1ヶ月以内に効果を実感できるスピード感のある支援を行います。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>業種別の専門知識</h3>
+                    <p>不動産、製造業、小売、サービス業など、業種ごとの特性を理解した上で、最適なAI活用方法を提案します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>伴走型サポート</h3>
+                    <p>導入後も定期的なミーティングやメールサポートで、継続的に効果を高めるための改善提案を行います。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>効果測定と改善</h3>
+                    <p>導入効果を数値化し、継続的な改善を行うことで、投資対効果を最大化します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- サービスセクション -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>サービス内容</h2>
+                <p>お客様のニーズや段階に合わせた、3つのサービスをご用意しています</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url(&#39;https://placehold.jp/80/dddddd/ffffff/300x300.png?text=%E8%A8%BA%E6%96%AD&#39;)"></div>
+                    <div class="service-content">
+                        <h3>AI業務診断サービス</h3>
+                        <div class="service-price">5万円（税別）/ 1回</div>
+                        <p>2時間のヒアリングであなたの会社の業務をAI活用の視点で診断し、具体的な改善提案を行います。</p>
+                        <ul class="service-features">
+                            <li>オンラインでの2時間ヒアリング</li>
+                            <li>AI活用可能性の分析</li>
+                            <li>3営業日以内の具体的提案レポート</li>
+                            <li>1時間の報告会</li>
+                        </ul>
+                        <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#contact" class="cta-button">診断を申し込む</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url(&#39;https://placehold.jp/80/dddddd/ffffff/300x300.png?text=%E3%82%B3%E3%83%B3%E3%82%B5%E3%83%AB&#39;)"></div>
+                    <div class="service-content">
+                        <h3>AI業務改革コンサルティング</h3>
+                        <div class="service-price">15万円（税別）/ 月（3ヶ月契約）</div>
+                        <p>診断結果に基づき、実際のAI導入から効果測定までを伴走支援します。</p>
+                        <ul class="service-features">
+                            <li>月2回のオンラインミーティング（各1時間）</li>
+                            <li>具体的なAI活用方法の提案と実装支援</li>
+                            <li>プロンプトエンジニアリング支援</li>
+                            <li>効果測定と継続的な改善提案</li>
+                            <li>月次レポートの提出</li>
+                            <li>メール・チャットでの質問対応</li>
+                        </ul>
+                        <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#contact" class="cta-button">詳細を問い合わせる</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url(&#39;https://placehold.jp/80/dddddd/ffffff/300x300.png?text=%E3%82%BB%E3%83%9F%E3%83%8A%E3%83%BC&#39;)"></div>
+                    <div class="service-content">
+                        <h3>AI活用オンラインセミナー</h3>
+                        <div class="service-price">3,000円（税別）/ 人</div>
+                        <p>中小企業経営者・担当者向けに、すぐに使えるAI活用法を解説します。</p>
+                        <ul class="service-features">
+                            <li>90分のオンラインセミナー</li>
+                            <li>基礎セミナー「中小企業のためのAI活用入門」</li>
+                            <li>業種別セミナー「不動産業のためのAI活用法」など</li>
+                            <li>テーマ別セミナー「AI文書作成で業務効率化」など</li>
+                            <li>質疑応答</li>
+                            <li>資料のダウンロード</li>
+                            <li>15分の個別相談（希望者）</li>
+                        </ul>
+                        <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#contact" class="cta-button">セミナーを申し込む</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 導入事例セクション -->
+    <section class="case-studies" id="case-studies">
+        <div class="container">
+            <div class="section-title">
+                <h2>導入事例</h2>
+                <p>AI業務改革ラボのサービスを導入いただいたお客様の成功事例をご紹介します</p>
+            </div>
+            
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <h3>不動産会社A社の事例</h3>
+                </div>
+                <div class="case-study-content">
+                    <div class="case-study-grid">
+                        <div class="case-study-section">
+                            <h4>課題</h4>
+                            <p>物件情報の入力や契約書作成に多くの時間を費やし、営業活動に支障をきたしていました。</p>
+                            
+                            <h4>導入したAI活用</h4>
+                            <ul>
+                                <li>物件説明文の自動生成</li>
+                                <li>契約書のAIチェックと修正提案</li>
+                                <li>顧客対応のためのAIチャットボット</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="case-study-section">
+                            <h4>導入効果</h4>
+                            <ul>
+                                <li>物件情報入力時間: <span class="result-highlight">60%削減</span></li>
+                                <li>契約書作成時間: <span class="result-highlight">45%削減</span></li>
+                                <li>顧客対応の初期応答: <span class="result-highlight">24時間化</span></li>
+                                <li>営業担当者の商談数: <span class="result-highlight">30%増加</span></li>
+                                <li>月間の業務時間: <span class="result-highlight">40時間削減</span></li>
+                            </ul>
+                            
+                            <p style="margin-top: 20px; font-style: italic;">「AIを活用して契約書作成や顧客対応の一部を自動化したことで、月間40時間以上の時間が削減できました。その時間を営業活動に回せるようになり、売上も15%アップしています。」</p>
+                            <p style="text-align: right; margin-top: 10px;">- 不動産会社 営業部長 鈴木様</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <h3>製造業B社の事例</h3>
+                </div>
+                <div class="case-study-content">
+                    <div class="case-study-grid">
+                        <div class="case-study-section">
+                            <h4>課題</h4>
+                            <p>技術ノウハウの属人化と報告書作成の負担が大きく、若手社員の育成にも時間がかかっていました。</p>
+                            
+                            <h4>導入したAI活用</h4>
+                            <ul>
+                                <li>技術マニュアルのAI検索システム</li>
+                                <li>報告書の自動生成と要約</li>
+                                <li>不具合予測のためのデータ分析</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="case-study-section">
+                            <h4>導入効果</h4>
+                            <ul>
+                                <li>情報検索時間: <span class="result-highlight">75%削減</span></li>
+                                <li>報告書作成時間: <span class="result-highlight">50%削減</span></li>
+                                <li>若手社員の技術習得: <span class="result-highlight">40%短縮</span></li>
+                                <li>不具合発生率: <span class="result-highlight">15%低減</span></li>
+                                <li>残業時間: <span class="result-highlight">月平均20時間削減</span></li>
+                            </ul>
+                            
+                            <p style="margin-top: 20px; font-style: italic;">「AIを活用した業務改革で、社員一人あたりの生産性が1.5倍になりました。特に資料作成や情報検索の効率化は、想像以上の効果がありました。」</p>
+                            <p style="text-align: right; margin-top: 10px;">- 製造業 総務部長 佐藤様</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 導入プロセスセクション -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>導入プロセス</h2>
+                <p>段階的なアプローチで、無理なくAI活用を進めていきます</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">無料セミナー参加</div>
+                    <div class="step-description">まずは無料セミナーでAI活用の可能性を知りましょう</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">AI業務診断</div>
+                    <div class="step-description">2時間のヒアリングで業務課題とAI活用可能性を診断</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">改善提案</div>
+                    <div class="step-description">具体的なAI活用方法と効果予測を提案</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">AI導入支援</div>
+                    <div class="step-description">実際のAI導入と活用方法の指導</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-title">効果測定・改善</div>
+                    <div class="step-description">導入効果の測定と継続的な改善提案</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3 style="margin-bottom: 20px; color: var(--primary-color);">安心の段階的導入</h3>
+                <p>無料セミナーから始めて、5万円の診断で効果を確認した上で<br>本格的な導入を判断できます。3ヶ月の短期契約から始められるので安心です。</p>
+                <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#contact" class="cta-button" style="margin-top: 30px;">まずは無料セミナーに参加する</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 料金プランセクション -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>料金プラン</h2>
+                <p>お客様のニーズに合わせた、わかりやすい料金体系をご用意しています</p>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>AI業務診断</h3>
+                    </div>
+                    <div class="pricing-price">
+                        5万円<span>（税別）</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>2時間のオンラインヒアリング</li>
+                        <li>AI活用可能性の分析</li>
+                        <li>具体的な改善提案（3〜5項目）</li>
+                        <li>3営業日以内のレポート提出</li>
+                        <li>1時間の報告会</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#contact" class="cta-button">診断を申し込む</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>AI業務改革コンサルティング</h3>
+                    </div>
+                    <div class="pricing-price">
+                        15万円<span>（税別）/ 月</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>月2回のオンラインミーティング</li>
+                        <li>AI活用方法の提案と実装支援</li>
+                        <li>プロンプトエンジニアリング支援</li>
+                        <li>効果測定と改善提案</li>
+                        <li>月次レポートの提出</li>
+                        <li>メール・チャットでの質問対応</li>
+                        <li>3ヶ月契約（合計45万円）</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#contact" class="cta-button">詳細を問い合わせる</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>AI活用セミナー</h3>
+                    </div>
+                    <div class="pricing-price">
+                        3,000円<span>（税別）/ 人</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>90分のオンラインセミナー</li>
+                        <li>質疑応答</li>
+                        <li>資料のダウンロード</li>
+                        <li>15分の個別相談（希望者）</li>
+                        <li>基礎・業種別・テーマ別セミナー</li>
+                        <li>5名以上の団体割引あり</li>
+                    </ul>
+                    <div class="pricing-button">
+                        <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#contact" class="cta-button">セミナーを申し込む</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3 style="margin-bottom: 20px; color: var(--primary-color);">オプションサービス</h3>
+                <p>業種別AI活用マニュアル: 3万円〜<br>
+                AI活用社内研修: 10万円〜<br>
+                AI活用型マーケティング支援: 10万円/月〜<br>
+                カスタムAIソリューション開発: 要相談</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- お客様の声セクション -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>お客様の声</h2>
+                <p>AI業務改革ラボのサービスを導入いただいたお客様からの声をご紹介します</p>
+            </div>
+            
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「AIを活用して契約書作成や顧客対応の一部を自動化したことで、月間40時間以上の時間が削減できました。その時間を営業活動に回せるようになり、売上も15%アップしています。専門知識がなくても理解できる説明が良かったです。」
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-color: #4CAF50;"></div>
+                        <div class="author-info">
+                            <h4>鈴木様</h4>
+                            <p>不動産会社 営業部長</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「AIを活用した業務改革で、社員一人あたりの生産性が1.5倍になりました。特に資料作成や情報検索の効率化は、想像以上の効果がありました。段階的に導入できたので、社内の抵抗感もなく進められました。」
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-color: #2E7D32;"></div>
+                        <div class="author-info">
+                            <h4>佐藤様</h4>
+                            <p>製造業 総務部長</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「AIに興味はあったものの、何から始めればいいか分からず悩んでいました。セミナーに参加して基礎知識を得た後、診断サービスで自社に最適なAI活用法を提案してもらい、スムーズに導入できました。」
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-color: #8BC34A;"></div>
+                        <div class="author-info">
+                            <h4>田中様</h4>
+                            <p>小売業 経営者</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「他社のAIコンサルティングも検討しましたが、費用が高額で躊躇していました。AI業務改革ラボは初期費用が抑えられ、効果を確認しながら段階的に進められるので安心でした。実際に導入してみると、想像以上の効果がありました。」
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-color: #4CAF50;"></div>
+                        <div class="author-info">
+                            <h4>山田様</h4>
+                            <p>サービス業 代表取締役</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- よくある質問セクション -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>よくある質問</h2>
+                <p>お客様からよくいただくご質問にお答えします</p>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>AIの専門知識がなくても利用できますか？</h3>
+                        <div class="accordion-icon">+</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>はい、専門知識がなくても問題ありません。むしろ、専門知識のない方にもわかりやすく説明し、実践的なAI活用を支援することが私たちの強みです。難解な専門用語を避け、業務改善の視点からわかりやすく説明します。</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>どのくらいの期間で効果が出ますか？</h3>
+                        <div class="accordion-icon">+</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>業務内容や課題によって異なりますが、多くの場合、AI導入後1ヶ月以内に効果を実感していただいています。特に定型業務の自動化や資料作成の効率化などは、導入直後から効果が表れやすい領域です。診断サービスでは、具体的な効果予測と期間についても提案させていただきます。</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>小規模な会社でも導入できますか？</h3>
+                        <div class="accordion-icon">+</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>はい、従業員数が少ない小規模企業こそ、AI活用による業務効率化の恩恵を受けやすいと考えています。少人数で多くの業務をこなす必要がある小規模企業では、AI活用による時間創出が大きな価値を生み出します。初期費用を抑えた導入プランもご用意していますので、ぜひご相談ください。</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>どのような業種に対応していますか？</h3>
+                        <div class="accordion-icon">+</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>不動産、製造業、小売、サービス業、士業（会計事務所、法律事務所など）を中心に、幅広い業種に対応しています。業種ごとの特性を理解した上で、最適なAI活用方法を提案します。これまでに100社以上の業務改革を支援してきた実績があります。</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>契約期間の縛りはありますか？</h3>
+                        <div class="accordion-icon">+</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>AI業務診断は1回のみの契約、AI活用セミナーも1回ごとの参加が可能です。AI業務改革コンサルティングは基本的に3ヶ月契約となりますが、これは効果を実感いただくために必要な期間として設定しています。3ヶ月経過後は、1ヶ月単位での更新が可能です。</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>オンライン対応のみですか？</h3>
+                        <div class="accordion-icon">+</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>基本的にはオンラインでの対応となりますが、首都圏のお客様については、別途交通費をいただくことで訪問対応も可能です。また、地方のお客様向けに、定期的に各地域でのセミナーや個別相談会も開催しています。詳細はお問い合わせください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA セクション -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>お気軽にご相談ください</h2>
+            <p>まずは無料セミナーにご参加いただくか、15分の無料相談からスタートしませんか？</p>
+            
+            <div class="cta-buttons">
+                <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#" class="white-button">無料セミナーに申し込む</a>
+                <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#" class="outline-button">15分無料相談を予約する</a>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <h3 style="margin-bottom: 20px;">お問い合わせ</h3>
+                <p>AI業務改革ラボ株式会社</p>
+                <p>TEL: 03-XXXX-XXXX</p>
+                <p>Email: info@ai-gyomu-kaikaku.co.jp</p>
+                <p>受付時間: 平日 9:00〜18:00</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="footer-logo-text">AI業務改革ラボ</div>
+                    </div>
+                    <p>中小企業の業務課題を生成AIで解決し、明日から使える形で提供します。わかりやすい説明と実践的なアドバイスで、AI活用による業務改革を支援します。</p>
+                    <div class="social-links">
+                        <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#" class="social-link">X</a>
+                        <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#" class="social-link">FB</a>
+                        <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#" class="social-link">YT</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h3 class="footer-heading">サービス</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#services">AI業務診断</a></li>
+                        <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#services">AI業務改革コンサルティング</a></li>
+                        <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#services">AI活用セミナー</a></li>
+                        <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#pricing">料金プラン</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h3 class="footer-heading">会社情報</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#">会社概要</a></li>
+                        <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#case-studies">導入事例</a></li>
+                        <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#">ブログ</a></li>
+                        <li><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#">採用情報</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-heading">お問い合わせ</h3>
+                    <p>TEL: 03-XXXX-XXXX</p>
+                    <p>Email: info@ai-gyomu-kaikaku.co.jp</p>
+                    <p>受付時間: 平日 9:00〜18:00</p>
+                    <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#contact" class="cta-button" style="margin-top: 20px;">お問い合わせ</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 AI業務改革ラボ株式会社 All Rights Reserved.</p>
+                <p><a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#" style="color: var(--medium-gray); text-decoration: none; margin: 0 10px;">プライバシーポリシー</a> | <a href="https://8002-i2oy1oc55uqygh978uinc-11e8e720.manus.computer/landing_page.html#" style="color: var(--medium-gray); text-decoration: none; margin: 0 10px;">利用規約</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // モバイルメニュー
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // モバイルメニューが開いていたら閉じる
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // アコーディオン
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            
+            header.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+
+</body></html>
